@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)file:///C:/Users/Shivani%20Upadhyay/Downloads/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Children's Day Quiz 2026 - Central Railway Sr. Sec. School, Bhusawal</title>
+<style>
+  :root {
+    --primary: #1a237e;
+    --secondary: #ff6f00;
+    --accent: #00897b;
+    --bg-light: #f4f7fb;
+    --card-bg: #ffffff;
+    --text-dark: #1e293b;
+    --correct: #2e7d32;
+    --wrong: #c62828;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  body {
+    background: linear-gradient(135deg, #e0f2fe 0%, #fef3c7 50%, #fce7f3 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-dark);
+    padding: 15px;
+  }
+  .slide-container {
+    width: 100%;
+    max-width: 980px;
+    min-height: 620px;
+    background: var(--card-bg);
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 4px solid #ffffff;
+  }
+  /* Top Status Bar */
+  .top-bar {
+    background: var(--primary);
+    color: white;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+  .score-badge {
+    background: #ffd54f;
+    color: #1a237e;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 1.05rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+  .slide-content {
+    flex: 1;
+    padding: 32px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  /* Welcome Slide Styling */
+  .welcome-slide {
+    background: linear-gradient(135deg, #ff9933 0%, #ffffff 48%, #138808 100%);
+    text-align: center;
+    padding: 35px;
+    border-radius: 16px;
+    border: 3px dashed #1a237e;
+    box-shadow: inset 0 0 25px rgba(255,255,255,0.8);
+  }
+  .school-header {
+    background: #1a237e;
+    color: #ffd54f;
+    padding: 16px 25px;
+    border-radius: 14px;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 6px 15px rgba(26, 35, 126, 0.3);
+    margin-bottom: 18px;
+  }
+  .occasion-banner {
+    background: #d81b60;
+    color: white;
+    display: inline-block;
+    padding: 10px 28px;
+    border-radius: 30px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(216, 27, 96, 0.3);
+  }
+  .wishes-box {
+    background: rgba(255, 255, 255, 0.94);
+    border: 2px solid #ff6f00;
+    border-radius: 14px;
+    padding: 18px 25px;
+    margin: 12px auto 20px;
+    max-width: 760px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #1e293b;
+    font-weight: 600;
+  }
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 18px 0 24px;
+  }
+  .rule-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 14px;
+    border-top: 5px solid var(--accent);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    font-size: 1rem;
+  }
+  .rule-card strong {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 4px;
+  }
+  /* Section Intro Slide */
+  .section-intro {
+    text-align: center;
+    padding: 35px;
+    border-radius: 18px;
+    color: white;
+  }
+  .sec-theme-1 { background: linear-gradient(135deg, #0284c7, #1e3a8a); }
+  .sec-theme-2 { background: linear-gradient(135deg, #ea580c, #9a3412); }
+  .sec-theme-3 { background: linear-gradient(135deg, #059669, #064e3b); }
+  .sec-theme-4 { background: linear-gradient(135deg, #7c3aed, #4c1d95); }
+  .sec-theme-5 { background: linear-gradient(135deg, #0d9488, #115e59); }
+  .section-tag {
+    background: rgba(255,255,255,0.22);
+    padding: 8px 22px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+  }
+  .section-desc {
+    font-size: 1.2rem;
+    max-width: 720px;
+    margin: 0 auto 24px;
+    line-height: 1.6;
+    opacity: 0.95;
+  }
+  /* Question Slide */
+  .q-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e2e8f0;
+  }
+  .q-sec-label {
+    background: #e0e7ff;
+    color: #1e3a8a;
+    padding: 5px 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+  .q-num-label {
+    font-weight: 700;
+    color: #64748b;
+    font-size: 1rem;
+  }
+  .question-text {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 24px;
+    line-height: 1.45;
+  }
+  .options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .option-btn {
+    background: #f8fafc;
+    border: 2px solid #cbd5e1;
+    border-radius: 14px;
+    padding: 16px 20px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #1e293b;
+  }
+  .option-btn:hover:not(:disabled) {
+    background: #eff6ff;
+    border-color: #3b82f6;
+    transform: translateY(-2px);
+  }
+  .option-btn:disabled {
+    cursor: default;
+  }
+  .opt-letter {
+    background: var(--primary);
+    color: white;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+  .option-btn.correct {
+    background: #dcfce7;
+    border-color: #16a34a;
+    color: #14532d;
+  }
+  .option-btn.correct .opt-letter {
+    background: #16a34a;
+  }
+  .option-btn.wrong {
+    background: #fee2e2;
+    border-color: #dc2626;
+    color: #7f1d1d;
+  }
+  .option-btn.wrong .opt-letter {
+    background: #dc2626;
+  }
+  .feedback-box {
+    min-height: 54px;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .feedback-box.show {
+    display: flex;
+  }
+  .feedback-correct {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #86efac;
+  }
+  .feedback-wrong {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+  }
+  /* Final & Thank You Slide */
+  .result-slide {
+    text-align: center;
+  }
+  .compliment-banner {
+    font-size: 2.6rem;
+    font-weight: 900;
+    padding: 18px 30px;
+    border-radius: 16px;
+    margin: 15px auto;
+    display: inline-block;
+    letter-spacing: 1px;
+  }
+  .comp-outstanding { background: #fef08a; color: #854d0e; border: 3px solid #eab308; }
+  .comp-verygood { background: #dcfce7; color: #166534; border: 3px solid #22c55e; }
+  .comp-good { background: #dbeafe; color: #1e40af; border: 3px solid #3b82f6; }
+  .comp-try { background: #ffedd5; color: #9a3412; border: 3px solid #f97316; }
+  .score-summary-box {
+    background: #f1f5f9;
+    border-radius: 16px;
+    padding: 20px;
+    margin: 15px auto 22px;
+    max-width: 720px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .stat-item {
+    background: white;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  }
+  .stat-val {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--primary);
+  }
+  .stat-lbl {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 600;
+  }
+  .thank-you-card {
+    background: linear-gradient(135deg, #1a237e, #283593);
+    color: white;
+    padding: 24px 30px;
+    border-radius: 16px;
+    margin-top: 10px;
+    box-shadow: 0 8px 20px rgba(26,35,126,0.25);
+  }
+  .thank-you-card h3 {
+    font-size: 1.6rem;
+    color: #ffd54f;
+    margin-bottom: 8px;
+  }
+  .thank-you-card p {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    color: #e2e8f0;
+  }
+  .quiz-master-sig {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+    border-top: 1px solid rgba(255,255,255,0.25);
+    padding-top: 10px;
+    margin-top: 8px;
+  }
+  /* Bottom Navigation */
+  .bottom-nav {
+    background: #f1f5f9;
+    padding: 14px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #cbd5e1;
+  }
+  .nav-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 26px;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .nav-btn:hover:not(:disabled) {
+    background: #283593;
+  }
+  .nav-btn:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+  }
+  .btn-start {
+    background: #d81b60;
+    font-size: 1.25rem;
+    padding: 14px 38px;
+    border-radius: 30px;
+    box-shadow: 0 6px 16px rgba(216,27,96,0.35);
+  }
+  .btn-start:hover {
+    background: #ad1457;
+  }
+  .progress-wrap {
+    flex: 1;
+    margin: 0 24px;
+    background: #cbd5e1;
+    height: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--accent);
+    width: 0%;
+    transition: width 0.3s ease;
+  }
+  @media (max-width: 768px) {
+    .options-grid, .rules-grid, .score-summary-box {
+      grid-template-columns: 1fr;
+    }
+    .school-header { font-size: 1.4rem; }
+    .slide-content { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="slide-container">
+  <div class="top-bar">
+    <div id="top-title">Central Railway Sr. Sec. School, Bhusawal</div>
+    <div class="score-badge">Score: <span id="live-score">0</span> / 100</div>
+  </div>
+
+  <div class="slide-content" id="slide-area">
+      <div class="welcome-slide">
+        <div class="school-header">Central Railway Sr. Sec. School, Bhusawal</div>
+        <div class="occasion-banner">🎉 Happy Children's Day — 14 November 2026 🎉</div>
+        <div class="wishes-box">
+          Warmest Best Wishes on <strong>Children's Day (14 November 2026)</strong> to all our dear students from the <strong>Principal and Staff</strong>!<br>
+          <span style="color:#1a237e; font-size:1.05rem;">Inter-House Knowledge Quiz Competition • Classes 6 to 8</span>
+        </div>
+        <div class="rules-grid">
+          <div class="rule-card">
+            <strong>5 Sections • 50 Questions</strong>
+            10 exciting multiple-choice questions in each section.
+          </div>
+          <div class="rule-card" style="border-top-color:#2e7d32;">
+            <strong>+2 Marks (Right)</strong>
+            Every correct answer awards +2 marks to your score.
+          </div>
+          <div class="rule-card" style="border-top-color:#c62828;">
+            <strong>-1 Mark (Wrong)</strong>
+            Think carefully! Every wrong answer deducts 1 mark.
+          </div>
+        </div>
+        <button class="nav-btn btn-start" onclick="nextSlide()">Let's Begin the Quiz! 🚀</button>
+      </div>
+    </div>
+
+  <div class="bottom-nav" id="bottom-nav">
+    <button class="nav-btn" id="prev-btn" onclick="prevSlide()" disabled="">← Previous</button>
+    <div class="progress-wrap">
+      <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
+    </div>
+    <button class="nav-btn" id="next-btn" onclick="nextSlide()">Start Quiz →</button>
+  </div>
+</div>
+
+<script>
+// ================= SCORM 1.2 API WRAPPER =================
+var scormAPI = null;
+function findAPI(win) {
+  var attempts = 0;
+  while ((win.API == null) && (win.parent != null) && (win.parent != win)) {
+    attempts++;
+    if (attempts > 10) return null;
+    win = win.parent;
+  }
+  return win.API;
+}
+function initSCORM() {
+  scormAPI = findAPI(window);
+  if (!scormAPI && window.opener) {
+    scormAPI = findAPI(window.opener);
+  }
+  if (scormAPI) {
+    scormAPI.LMSInitialize("");
+    scormAPI.LMSSetValue("cmi.core.score.min", "0");
+    scormAPI.LMSSetValue("cmi.core.score.max", "100");
+    scormAPI.LMSSetValue("cmi.core.lesson_status", "incomplete");
+    scormAPI.LMSCommit("");
+  }
+}
+function updateSCORMScore(score, completed) {
+  if (scormAPI) {
+    var clampedScore = Math.max(0, Math.min(100, score));
+    scormAPI.LMSSetValue("cmi.core.score.raw", clampedScore.toString());
+    if (completed) {
+      scormAPI.LMSSetValue("cmi.core.lesson_status", clampedScore >= 60 ? "passed" : "completed");
+    }
+    scormAPI.LMSCommit("");
+  }
+}
+function finishSCORM() {
+  if (scormAPI) {
+    scormAPI.LMSFinish("");
+  }
+}
+window.addEventListener("load", initSCORM);
+window.addEventListener("beforeunload", finishSCORM);
+
+// ================= QUIZ DATA (5 SECTIONS x 10 QUESTIONS) =================
+const sections = [
+  {
+    id: 1,
+    theme: "sec-theme-1",
+    title: "Section 1: Inventions and Discoveries in Science",
+    subtitle: "Exploring great scientific breakthroughs, life-saving medicines, and brilliant inventors who changed human life forever.",
+    questions: [
+      { q: "Who discovered penicillin, the world's first widely used antibiotic?", opts: ["Louis Pasteur", "Alexander Fleming", "Edward Jenner", "Robert Koch"], ans: 1, info: "Alexander Fleming discovered penicillin in 1928." },
+      { q: "Which Indian physicist discovered the scattering of light known as the 'Raman Effect'?", opts: ["Homi J. Bhabha", "Satyendra Nath Bose", "C. V. Raman", "Vikram Sarabhai"], ans: 2, info: "Sir C. V. Raman won the Nobel Prize in Physics in 1930 for this discovery." },
+      { q: "Who invented the practical incandescent electric light bulb?", opts: ["Nikola Tesla", "Thomas Alva Edison", "Michael Faraday", "Benjamin Franklin"], ans: 1, info: "Thomas Alva Edison developed the first commercially practical incandescent light bulb." },
+      { q: "Which scientist developed the first successful vaccine against smallpox?", opts: ["Edward Jenner", "Jonas Salk", "Marie Curie", "Alexander Fleming"], ans: 0, info: "Edward Jenner pioneered the smallpox vaccine in 1796." },
+      { q: "Who is credited with inventing the telephone in 1876?", opts: ["Guglielmo Marconi", "Alexander Graham Bell", "John Logie Baird", "Samuel Morse"], ans: 1, info: "Alexander Graham Bell patented the telephone in 1876." },
+      { q: "Which scientist discovered radioactivity and won Nobel Prizes in both Physics and Chemistry?", opts: ["Lise Meitner", "Rosalind Franklin", "Marie Curie", "Dorothy Hodgkin"], ans: 2, info: "Marie Curie discovered polonium and radium and won two Nobel Prizes." },
+      { q: "Who invented the Crescograph to measure growth in plants?", opts: ["Jagadish Chandra Bose", "Birbal Sahni", "Meghnad Saha", "Prafulla Chandra Ray"], ans: 0, info: "Sir Jagadish Chandra Bose invented the Crescograph to show that plants have life and sensitivity." },
+      { q: "Which brothers are famous for inventing and flying the world's first successful motor-operated airplane?", opts: ["Lumiere Brothers", "Wright Brothers", "Montgolfier Brothers", "Grimm Brothers"], ans: 1, info: "Orville and Wilbur Wright made the first controlled powered flight in 1903." },
+      { q: "Who discovered the law of universal gravitation after observing a falling apple?", opts: ["Galileo Galilei", "Johannes Kepler", "Isaac Newton", "Albert Einstein"], ans: 2, info: "Sir Isaac Newton formulated the laws of motion and universal gravitation." },
+      { q: "Who invented the World Wide Web (WWW) in 1989?", opts: ["Bill Gates", "Tim Berners-Lee", "Steve Jobs", "Charles Babbage"], ans: 1, info: "Sir Tim Berners-Lee invented the World Wide Web while working at CERN." }
+    ]
+  },
+  {
+    id: 2,
+    theme: "sec-theme-2",
+    title: "Section 2: Life of Indian Freedom Fighters & Social Reformers",
+    subtitle: "Remembering the courage, sacrifice, and social awakening led by India's greatest patriots and visionaries.",
+    questions: [
+      { q: "Who gave the inspiring slogan 'Swaraj is my birthright and I shall have it'?", opts: ["Lala Lajpat Rai", "Bal Gangadhar Tilak", "Bipin Chandra Pal", "Gopal Krishna Gokhale"], ans: 1, info: "Lokmanya Bal Gangadhar Tilak gave this famous slogan." },
+      { q: "Which social reformer founded the Brahmo Samaj and campaigned against the practice of Sati?", opts: ["Swami Dayananda Saraswati", "Raja Ram Mohan Roy", "Ishwar Chandra Vidyasagar", "Jyotirao Phule"], ans: 1, info: "Raja Ram Mohan Roy is known as the Father of the Indian Renaissance." },
+      { q: "Who founded the Azad Hind Fauj (Indian National Army) and gave the call 'Give me blood, and I shall give you freedom'?", opts: ["Bhagat Singh", "Chandrashekhar Azad", "Subhas Chandra Bose", "Rash Behari Bose"], ans: 2, info: "Netaji Subhas Chandra Bose led the Azad Hind Fauj." },
+      { q: "Who along with her husband Jyotirao Phule opened the first school for girls in Pune in 1848?", opts: ["Sarojini Naidu", "Savitribai Phule", "Annie Besant", "Pandita Ramabai"], ans: 1, info: "Savitribai Phule is celebrated as India's first female teacher." },
+      { q: "Which leader is popularly known as the 'Iron Man of India' for uniting over 560 princely states?", opts: ["Jawaharlal Nehru", "Sardar Vallabhbhai Patel", "Dr. Rajendra Prasad", "Maulana Abul Kalam Azad"], ans: 1, info: "Sardar Vallabhbhai Patel unified independent India." },
+      { q: "Who authored the famous book 'Gulamgiri' and founded the Satyashodhak Samaj?", opts: ["Dr. B. R. Ambedkar", "Jyotirao Phule", "Mahatma Gandhi", "Vinoba Bhave"], ans: 1, info: "Mahatma Jyotirao Phule founded Satyashodhak Samaj in 1873." },
+      { q: "Who is respected as the Chief Architect of the Indian Constitution?", opts: ["Dr. Rajendra Prasad", "Dr. B. R. Ambedkar", "K. M. Munshi", "B. N. Rau"], ans: 1, info: "Dr. Bhimrao Ramji Ambedkar chaired the Drafting Committee of the Constitution." },
+      { q: "Which young revolutionary raised the slogan 'Inquilab Zindabad' and sacrificed his life at age 23?", opts: ["Sukhdev Thapar", "Bhagat Singh", "Khudiram Bose", "Ashfaqulla Khan"], ans: 1, info: "Shaheed Bhagat Singh popularized 'Inquilab Zindabad'." },
+      { q: "Who founded the Arya Samaj in 1875 and gave the call 'Go back to the Vedas'?", opts: ["Swami Vivekananda", "Swami Dayananda Saraswati", "Ramakrishna Paramahamsa", "Sri Aurobindo"], ans: 1, info: "Swami Dayananda Saraswati founded the Arya Samaj." },
+      { q: "Which freedom fighter was lovingly called the 'Nightingale of India' (Bharat Kokila)?", opts: ["Vijaya Lakshmi Pandit", "Sucheta Kripalani", "Sarojini Naidu", "Aruna Asaf Ali"], ans: 2, info: "Sarojini Naidu was a renowned poet and freedom fighter." }
+    ]
+  },
+  {
+    id: 3,
+    theme: "sec-theme-3",
+    title: "Section 3: Indians' Achievements in Sports and Games",
+    subtitle: "Celebrating India's Olympic champions, world record holders, and sporting icons across the globe.",
+    questions: [
+      { q: "Who became the first Indian to win an individual Olympic gold medal in athletics (Javelin Throw) at Tokyo 2020?", opts: ["Abhinav Bindra", "Neeraj Chopra", "Milkha Singh", "Anju Bobby George"], ans: 1, info: "Neeraj Chopra won India's historic athletics gold medal in 2021." },
+      { q: "Who was the first Indian sportsperson to win an individual Olympic gold medal (10m Air Rifle, Beijing 2008)?", opts: ["Rajyavardhan Singh Rathore", "Gagan Narang", "Abhinav Bindra", "Vijay Kumar"], ans: 2, info: "Abhinav Bindra won India's first individual Olympic gold in 2008." },
+      { q: "Which Indian legend is known as the 'Wizard of Hockey'?", opts: ["Dhanraj Pillay", "Major Dhyan Chand", "Balbir Singh Sr.", "P. R. Sreejesh"], ans: 1, info: "Major Dhyan Chand won three Olympic gold medals in hockey (1928, 1932, 1936)." },
+      { q: "Who became the first Indian woman to win two Olympic medals (Silver in 2016 and Bronze in 2020) in Badminton?", opts: ["Saina Nehwal", "P. V. Sindhu", "Jwala Gutta", "Ashwini Ponnappa"], ans: 1, info: "P. V. Sindhu achieved this remarkable feat in Badminton." },
+      { q: "Which Indian shooter won two bronze medals in a single edition of the Olympics at Paris 2024?", opts: ["Manu Bhaker", "Avani Lekhara", "Rahi Sarnobat", "Anjum Moudgil"], ans: 0, info: "Manu Bhaker won bronze medals in individual and mixed team 10m air pistol at Paris 2024." },
+      { q: "Who was India's first Chess Grandmaster and a five-time World Chess Champion?", opts: ["R. Praggnanandhaa", "Viswanathan Anand", "D. Gukesh", "Pentala Harikrishna"], ans: 1, info: "Viswanathan Anand became India's first Grandmaster in 1988." },
+      { q: "Which Indian cricketer is the first player in history to score 100 international centuries?", opts: ["Virat Kohli", "Sunil Gavaskar", "Sachin Tendulkar", "Rahul Dravid"], ans: 2, info: "Sachin Tendulkar scored 100 international centuries." },
+      { q: "Who is the six-time World Amateur Boxing Champion from Manipur nicknamed 'Magnificent Mary'?", opts: ["Lovlina Borgohain", "Nikhat Zareen", "M. C. Mary Kom", "Sarita Devi"], ans: 2, info: "M. C. Mary Kom is a six-time World Champion and Olympic bronze medallist." },
+      { q: "Which Indian para-athlete won gold medals in Women's 10m Air Rifle at both Tokyo 2020 and Paris 2024 Paralympics?", opts: ["Deepa Malik", "Avani Lekhara", "Bhavina Patel", "Sheetal Devi"], ans: 1, info: "Avani Lekhara made history with back-to-back Paralympic golds." },
+      { q: "Under whose captaincy did India win its first-ever Cricket World Cup in 1983?", opts: ["Sunil Gavaskar", "Kapil Dev", "Mohinder Amarnath", "M. S. Dhoni"], ans: 1, info: "Kapil Dev led India to victory at Lord's in 1983." }
+    ]
+  },
+  {
+    id: 4,
+    theme: "sec-theme-4",
+    title: "Section 4: Important Days Observed in India",
+    subtitle: "Knowing the special national days that honor our leaders, scientists, teachers, soldiers, and children.",
+    questions: [
+      { q: "Children's Day is celebrated across India on 14 November to mark the birth anniversary of which leader?", opts: ["Mahatma Gandhi", "Pandit Jawaharlal Nehru", "Dr. A. P. J. Abdul Kalam", "Sardar Patel"], ans: 1, info: "14 November is the birth anniversary of Pandit Jawaharlal Nehru (Chacha Nehru)." },
+      { q: "National Science Day is observed every year on 28 February to commemorate which event?", opts: ["Launch of Aryabhata", "Discovery of the Raman Effect", "Pokhran Nuclear Test", "Birth of Homi Bhabha"], ans: 1, info: "Sir C. V. Raman announced the Raman Effect on 28 February 1928." },
+      { q: "Teachers' Day in India is celebrated on 5 September in honor of which eminent scholar and President?", opts: ["Dr. Zakir Husain", "Dr. Sarvepalli Radhakrishnan", "Dr. Rajendra Prasad", "Maulana Abul Kalam Azad"], ans: 1, info: "5 September is the birthday of Dr. Sarvepalli Radhakrishnan." },
+      { q: "National Youth Day is celebrated on 12 January on the birth anniversary of which spiritual leader?", opts: ["Swami Vivekananda", "Sri Aurobindo", "Swami Dayananda", "Mahatma Gandhi"], ans: 0, info: "12 January marks the birth anniversary of Swami Vivekananda." },
+      { q: "National Sports Day is celebrated in India on 29 August to honor which sports legend?", opts: ["Milkha Singh", "Major Dhyan Chand", "Kapil Dev", "Sachin Tendulkar"], ans: 1, info: "29 August is the birth anniversary of Major Dhyan Chand." },
+      { q: "Constitution Day (Samvidhan Divas) is observed in India every year on which date?", opts: ["26 January", "15 August", "26 November", "2 October"], ans: 2, info: "The Constituent Assembly adopted the Constitution of India on 26 November 1949." },
+      { q: "National Voters' Day is observed across India on 25 January to mark the foundation of which institution?", opts: ["Supreme Court of India", "Election Commission of India", "Reserve Bank of India", "Parliament of India"], ans: 1, info: "The Election Commission of India was established on 25 January 1950." },
+      { q: "Kargil Vijay Diwas is observed every year on 26 July to salute the bravery of whom?", opts: ["Indian Coast Guard", "Indian Armed Forces", "Indian Railways", "Border Roads Organisation"], ans: 1, info: "26 July marks India's victory in Operation Vijay during the 1999 Kargil War." },
+      { q: "Rashtriya Ekta Diwas (National Unity Day) is observed on 31 October on the birth anniversary of whom?", opts: ["Subhas Chandra Bose", "Sardar Vallabhbhai Patel", "Lal Bahadur Shastri", "Atal Bihari Vajpayee"], ans: 1, info: "31 October is the birth anniversary of Sardar Vallabhbhai Patel." },
+      { q: "National Space Day in India is celebrated on 23 August to celebrate which historic achievement?", opts: ["Launch of Mangalyaan", "Soft landing of Chandrayaan-3 on the Moon", "Launch of Aditya-L1", "First Indian in Space"], ans: 1, info: "Chandrayaan-3 successfully landed near the Moon's south pole on 23 August 2023." }
+    ]
+  },
+  {
+    id: 5,
+    theme: "sec-theme-5",
+    title: "Section 5: Environment and Social Awareness",
+    subtitle: "Understanding nature conservation, clean habits, civic responsibility, and sustainable living for a better tomorrow.",
+    questions: [
+      { q: "Which gas in the Earth's upper atmosphere protects living beings from harmful ultraviolet (UV) rays of the Sun?", opts: ["Carbon Dioxide", "Ozone", "Nitrogen", "Methane"], ans: 1, info: "The Ozone layer absorbs harmful UV radiation from the Sun." },
+      { q: "What do the '3 Rs' of waste management and environmental conservation stand for?", opts: ["Read, Remember, Recall", "Reduce, Reuse, Recycle", "Run, Rest, Recover", "Repair, Repaint, Replace"], ans: 1, info: "Reduce, Reuse, and Recycle help minimize waste and save natural resources." },
+      { q: "Which famous environmental movement in the 1970s involved villagers hugging trees in Uttarakhand to prevent them from being cut down?", opts: ["Narmada Bachao Andolan", "Chipko Movement", "Silent Valley Movement", "Appiko Movement"], ans: 1, info: "The Chipko Movement was a landmark forest conservation movement." },
+      { q: "Which color dustbin is universally used in India for collecting wet and biodegradable kitchen waste?", opts: ["Blue", "Green", "Red", "Yellow"], ans: 1, info: "Green bins are for wet/biodegradable waste; Blue bins are for dry/recyclable waste." },
+      { q: "Which nationwide cleanliness campaign was launched in India on 2 October 2014?", opts: ["Jal Jeevan Mission", "Swachh Bharat Abhiyan", "Digital India", "Make in India"], ans: 1, info: "Swachh Bharat Abhiyan promotes cleanliness and sanitation across India." },
+      { q: "Which of the following is a clean, renewable source of energy?", opts: ["Coal", "Petroleum", "Solar Energy", "Natural Gas"], ans: 2, info: "Solar energy is renewable and does not cause air pollution." },
+      { q: "What is the national emergency helpline number in India for Police, Fire, and Ambulance services?", opts: ["100", "112", "139", "198"], ans: 1, info: "112 is India's single pan-India emergency response number." },
+      { q: "Which railway helpline number can passengers dial for security, medical help, or assistance during train travel?", opts: ["139", "108", "101", "1098"], ans: 0, info: "139 is the integrated Indian Railways helpline number." },
+      { q: "Which process by green plants absorbs carbon dioxide from the air and releases oxygen?", opts: ["Respiration", "Photosynthesis", "Transpiration", "Germination"], ans: 1, info: "During photosynthesis, plants use sunlight to convert CO2 and water into food and oxygen." },
+      { q: "Which national child helpline number provides 24x7 emergency assistance to children in distress in India?", opts: ["1098", "1075", "1800", "14417"], ans: 0, info: "1098 (CHILDLINE) is India's dedicated 24-hour emergency helpline for children." }
+    ]
+  }
+];
+
+// ================= BUILD SLIDES DECK =================
+// Slide 0: Welcome Slide
+// For each section s (0..4):
+//   1 Section Intro Slide
+//   10 Question Slides
+// Final Slide: Result + Compliment + Thank You Slide
+// Total Slides = 1 + 5*(1 + 10) + 1 = 57 slides
+
+let slides = [];
+slides.push({ type: "welcome" });
+
+sections.forEach((sec, sIdx) => {
+  slides.push({ type: "section_intro", section: sec });
+  sec.questions.forEach((item, qIdx) => {
+    slides.push({
+      type: "question",
+      section: sec,
+      qIndexInSec: qIdx + 1,
+      globalQNum: sIdx * 10 + qIdx + 1,
+      data: item,
+      answered: false,
+      selectedOpt: null,
+      isCorrect: null
+    });
+  });
+});
+
+slides.push({ type: "result" });
+
+let currentSlide = 0;
+let score = 0;
+let correctCount = 0;
+let wrongCount = 0;
+
+function updateScoreDisplay() {
+  document.getElementById("live-score").textContent = score;
+  const isFinished = (currentSlide === slides.length - 1);
+  updateSCORMScore(score, isFinished);
+}
+
+function renderSlide() {
+  const slide = slides[currentSlide];
+  const area = document.getElementById("slide-area");
+  const prevBtn = document.getElementById("prev-btn");
+  const nextBtn = document.getElementById("next-btn");
+  const progressFill = document.getElementById("progress-fill");
+
+  progressFill.style.width = ((currentSlide / (slides.length - 1)) * 100) + "%";
+  prevBtn.disabled = (currentSlide === 0);
+
+  if (slide.type === "welcome") {
+    nextBtn.disabled = false;
+    nextBtn.textContent = "Start Quiz →";
+    area.innerHTML = `
+      <div class="welcome-slide">
+        <div class="school-header">Central Railway Sr. Sec. School, Bhusawal</div>
+        <div class="occasion-banner">🎉 Happy Children's Day — 14 November 2026 🎉</div>
+        <div class="wishes-box">
+          Warmest Best Wishes on <strong>Children's Day (14 November 2026)</strong> to all our dear students from the <strong>Principal and Staff</strong>!<br>
+          <span style="color:#1a237e; font-size:1.05rem;">Inter-House Knowledge Quiz Competition • Classes 6 to 8</span>
+        </div>
+        <div class="rules-grid">
+          <div class="rule-card">
+            <strong>5 Sections • 50 Questions</strong>
+            10 exciting multiple-choice questions in each section.
+          </div>
+          <div class="rule-card" style="border-top-color:#2e7d32;">
+            <strong>+2 Marks (Right)</strong>
+            Every correct answer awards +2 marks to your score.
+          </div>
+          <div class="rule-card" style="border-top-color:#c62828;">
+            <strong>-1 Mark (Wrong)</strong>
+            Think carefully! Every wrong answer deducts 1 mark.
+          </div>
+        </div>
+        <button class="nav-btn btn-start" onclick="nextSlide()">Let's Begin the Quiz! 🚀</button>
+      </div>
+    `;
+  } else if (slide.type === "section_intro") {
+    nextBtn.disabled = false;
+    nextBtn.textContent = "Start Section " + slide.section.id + " →";
+    area.innerHTML = `
+      <div class="section-intro ${slide.section.theme}">
+        <div class="section-tag">ROUND ${slide.section.id} OF 5 • 10 QUESTIONS</div>
+        <div class="section-title">${slide.section.title}</div>
+        <div class="section-desc">${slide.section.subtitle}</div>
+        <div style="background:rgba(255,255,255,0.18); display:inline-block; padding:10px 22px; border-radius:12px; font-weight:600; margin-bottom:22px;">
+          Marking Scheme: +2 Marks for Correct Answer | -1 Mark for Wrong Answer
+        </div><br>
+        <button class="nav-btn" style="background:#ffd54f; color:#1a237e; font-size:1.15rem; padding:14px 32px;" onclick="nextSlide()">
+          Proceed to Questions →
+        </button>
+      </div>
+    `;
+  } else if (slide.type === "question") {
+    nextBtn.disabled = !slide.answered;
+    nextBtn.textContent = (currentSlide === slides.length - 2) ? "View Final Result 🏆" : "Next Question →";
+
+    const letters = ["A", "B", "C", "D"];
+    let optionsHtml = slide.data.opts.map((opt, idx) => {
+      let cls = "option-btn";
+      if (slide.answered) {
+        if (idx === slide.data.ans) cls += " correct";
+        else if (idx === slide.selectedOpt) cls += " wrong";
+      }
+      return `
+        <button class="${cls}" onclick="selectOption(${idx})" ${slide.answered ? "disabled" : ""}>
+          <span class="opt-letter">${letters[idx]}</span>
+          <span>${opt}</span>
+        </button>
+      `;
+    }).join("");
+
+    let fbClass = "feedback-box";
+    let fbText = "";
+    if (slide.answered) {
+      fbClass += slide.isCorrect ? " show feedback-correct" : " show feedback-wrong";
+      fbText = slide.isCorrect
+        ? `✅ Correct! (+2 Marks) — ${slide.data.info}`
+        : `❌ Wrong! (-1 Mark) Correct Answer: ${letters[slide.data.ans]}) ${slide.data.opts[slide.data.ans]}. ${slide.data.info}`;
+    }
+
+    area.innerHTML = `
+      <div class="q-meta">
+        <span class="q-sec-label">${slide.section.title}</span>
+        <span class="q-num-label">Question ${slide.qIndexInSec}/10 (Overall #${slide.globalQNum}/50)</span>
+      </div>
+      <div class="question-text">Q${slide.qIndexInSec}. ${slide.data.q}</div>
+      <div class="options-grid">${optionsHtml}</div>
+      <div class="${fbClass}" id="feedback-box">${fbText}</div>
+    `;
+  } else if (slide.type === "result") {
+    nextBtn.disabled = true;
+    nextBtn.textContent = "Quiz Completed";
+
+    let compliment = "";
+    let compClass = "";
+    if (score >= 45) {
+      compliment = "🌟 Outstanding! 🌟";
+      compClass = "comp-outstanding";
+    } else if (score >= 40) {
+      compliment = "👏 Very Good! 👏";
+      compClass = "comp-verygood";
+    } else if (score >= 30) {
+      compliment = "👍 Good! 👍";
+      compClass = "comp-good";
+    } else {
+      compliment = "💪 Try ... Try ... Try! 💪";
+      compClass = "comp-try";
+    }
+
+    const unanswered = 50 - (correctCount + wrongCount);
+    updateSCORMScore(score, true);
+
+    area.innerHTML = `
+      <div class="result-slide">
+        <div style="font-size:1.1rem; font-weight:700; color:#475569; text-transform:uppercase; letter-spacing:1px;">
+          Children's Day Quiz 2026 • Final Scorecard
+        </div>
+        <div class="compliment-banner ${compClass}">${compliment}</div>
+        <div class="score-summary-box">
+          <div class="stat-item">
+            <div class="stat-val">${score} / 100</div>
+            <div class="stat-lbl">Final Marks</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val" style="color:#16a34a;">${correctCount} (+${correctCount * 2})</div>
+            <div class="stat-lbl">Right Answers</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val" style="color:#dc2626;">${wrongCount} (-${wrongCount})</div>
+            <div class="stat-lbl">Wrong Answers</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val" style="color:#64748b;">${unanswered}</div>
+            <div class="stat-lbl">Unattempted</div>
+          </div>
+        </div>
+        <div class="thank-you-card">
+          <h3>🙏 Thank You for Participating! 🙏</h3>
+          <p>
+            Heartfelt thanks to all the enthusiastic students of Classes 6 to 8, respected teachers, and technical coordinators for making this Children's Day Quiz a grand celebration of curiosity, knowledge, and spirit. Keep questioning, keep learning, and keep shining!
+          </p>
+          <div class="quiz-master-sig">
+            Note &amp; Compiled by Quiz Master:<br>
+            Sh. S.K. Upadhyay, Librarian<br>
+            Central Railway Sr. Sec. School, Bhusawal
+          </div>
+        </div>
+      </div>
+    `;
+  }
+}
+
+function selectOption(optIndex) {
+  const slide = slides[currentSlide];
+  if (slide.type !== "question" || slide.answered) return;
+
+  slide.answered = true;
+  slide.selectedOpt = optIndex;
+  slide.isCorrect = (optIndex === slide.data.ans);
+
+  if (slide.isCorrect) {
+    score += 2;
+    correctCount += 1;
+  } else {
+    score -= 1;
+    wrongCount += 1;
+  }
+
+  updateScoreDisplay();
+  renderSlide();
+}
+
+function nextSlide() {
+  if (currentSlide < slides.length - 1) {
+    currentSlide++;
+    renderSlide();
+  }
+}
+
+function prevSlide() {
+  if (currentSlide > 0) {
+    currentSlide--;
+    renderSlide();
+  }
+}
+
+// Initial render
+renderSlide();
+</script>
+
+</body></html>
